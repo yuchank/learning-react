@@ -1,3 +1,30 @@
+// 1. React and ReactDOM
+// const dish = React.createElement('h1', { id: 'recipe-0', 'data-type': 'title'}, 'Baked Salmon');
+
+// 2. component tree
+const dish = React.createElement('section', { id: 'baked-salmon' }, 
+  React.createElement('h1', null, 'Baked Salmon'),
+  React.createElement('ul', { 'className': 'ingredients' }, 
+    React.createElement('li', null, '1 lb Salmon'),
+    React.createElement('li', null, '1 cup Pine Nuts'),
+    React.createElement('li', null, '2 cups Butter Lettuce'),
+    React.createElement('li', null, '1 Yellow Squash'),
+    React.createElement('li', null, '1/2 cup Olive Oil'),
+    React.createElement('li', null, '3 cloves of Garlic')
+  ),
+  React.createElement('section', { 'className': 'instuctions' }, 
+    React.createElement('h2', null, 'Cooking Instructions'), 
+    React.createElement('p', null, 'Preheat the oven to 350 degrees.'),
+    React.createElement('p', null, 'Spread the olive oil around a glass baking dish.'),
+    React.createElement('p', null, 'Add the salmon, garlic, and pine nuts to the dish.'),
+    React.createElement('p', null, 'Bake for 15 minutes.'),
+    React.createElement('p', null, 'Add the yellow squash and put back in the oven for 30 mins.'),
+    React.createElement('p', null, 'Remove from oven and let cool for 15 minutes. Add the lettuce and serve.')
+  )
+);
+ReactDOM.render(dish, document.getElementById('react-container'));
+
+/*
 var items = [
   '1 lb Salmon',
   '1 cup Pine Nuts',
@@ -56,3 +83,4 @@ var dish = React.createElement('section', {id: 'baked-salmon'},
   )
 );
 render(dish, document.getElementById('react-container'));
+*/
