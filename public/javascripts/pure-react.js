@@ -96,24 +96,33 @@ const items = [
 // ReactDOM.render(React.createElement(IngredientsList, { items }, null), document.getElementById('react-container'));
 
 // 4.3.1. destructuring the properties argument : { items } = props
-const IngredientsList = ({ items }) => React.createElement('ul', { className: 'ingredients' }, items.map((ingredient, i) => React.createElement('li', { key: i }, ingredient)));
-ReactDOM.render(React.createElement(IngredientsList, { items }, null), document.getElementById('react-container'));
+// const IngredientsList = ({ items }) => React.createElement('ul', { className: 'ingredients' }, items.map((ingredient, i) => React.createElement('li', { key: i }, ingredient)));
+// ReactDOM.render(React.createElement(IngredientsList, { items }, null), document.getElementById('react-container'));
 
+// factories
+// React.DOM.h1(null, 'Baked Salmon');          // deprecated
+// React.DOM.ul({ className: 'ingredients' },   // deprecated
+//   React.DOM.li(null, 'lb Salmon'),
+//   React.DOM.li(null, '1 cup Pine Nuts'),
+//   React.DOM.li(null, '2 cups Butter Lettuce'),
+//   React.DOM.li(null, '1 Yellow Squash'),
+//   React.DOM.li(null, '1/2 cup Olive Oil'),
+//   React.DOM.li(null, '3 cloves of Garlic'));
+// var dish = React.DOM.ul({ className: 'ingredients '}, items.map((ingredient, i) => React.DOM.li({ key }, ingredient))); // deprecated
+// ReactDOM.render(dish, document.getElementById('react-container'));
 
-/*
 const { render } = ReactDOM;
 
-// const IngredientsList = ({items}) => React.DOM.ul({className: 'ingredients'}, items.map((ingredient, i) => React.DOM.li({key: i}, ingredient)));
-const IngredientsList = ({list}) => React.createElement('ul', null, items.map((ingredient, i) => React.createElement('li', {key: i}, ingredient)));
+const IngredientsList = ({ items }) => React.createElement('ul', null, items.map((ingredient, i) => React.createElement('li', { key: i }, ingredient)));
 
 const Ingredients = React.createFactory(IngredientsList);
 
 // const list = React.createElement(IngredientsList, null, null);
-// ReactDOM.render(React.createElement(IngredientsList, {items}, null), document.getElementById('react-container'));
+ReactDOM.render(React.createElement(IngredientsList, { items }, null), document.getElementById('react-container'));
 
 var dish = React.createElement('section', {id: 'baked-salmon'},
   React.createElement('h1', null, 'Baked Salmon'),
-  Ingredients({items}),
+  Ingredients({ items }),
   React.createElement('section', {'className': 'instructions'},
     React.createElement('h2', null, 'Cooking Instructions'),
     React.createElement('p', null, 'Preheat the oven to 350 degrees.'),
@@ -125,4 +134,3 @@ var dish = React.createElement('section', {id: 'baked-salmon'},
   )
 );
 render(dish, document.getElementById('react-container'));
-*/
